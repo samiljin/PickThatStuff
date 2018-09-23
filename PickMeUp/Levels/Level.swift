@@ -9,7 +9,10 @@
 import Foundation
 
 protocol Level {
-    var timeToReactInMillis: Int { get }
+    var timeToReactInSeconds: TimeInterval { get }
     var totalHitsToGetToNextLevel: Int { get }
+    var totalHitsOnCurrentLevel: Int { get }
+    
+    func nextSpriteMovements() -> Array<SpriteMovement>
     func calculatePointsForHit(reactionTimeInMillis: Int) -> Int
 }

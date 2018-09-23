@@ -10,6 +10,8 @@
 		EE2684C02156D3A60074F14D /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2684BF2156D3A60074F14D /* GameState.swift */; };
 		EE2684C32156D5AE0074F14D /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2684C22156D5AE0074F14D /* Level.swift */; };
 		EE2684C52156DBA90074F14D /* LevelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2684C42156DBA90074F14D /* LevelOne.swift */; };
+		EE2684C92157BB410074F14D /* SpriteMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2684C82157BB410074F14D /* SpriteMovement.swift */; };
+		EE2684CB2157BB780074F14D /* SpawnAtRandomLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2684CA2157BB780074F14D /* SpawnAtRandomLocation.swift */; };
 		EE68ADB82156815700903083 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE68ADB72156815700903083 /* AppDelegate.swift */; };
 		EE68ADBE2156815700903083 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE68ADBD2156815700903083 /* GameScene.swift */; };
 		EE68ADC02156815700903083 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE68ADBF2156815700903083 /* GameViewController.swift */; };
@@ -23,6 +25,8 @@
 		EE2684BF2156D3A60074F14D /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		EE2684C22156D5AE0074F14D /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		EE2684C42156DBA90074F14D /* LevelOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOne.swift; sourceTree = "<group>"; };
+		EE2684C82157BB410074F14D /* SpriteMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteMovement.swift; sourceTree = "<group>"; };
+		EE2684CA2157BB780074F14D /* SpawnAtRandomLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnAtRandomLocation.swift; sourceTree = "<group>"; };
 		EE68ADB42156815700903083 /* PickMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE68ADB72156815700903083 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE68ADBD2156815700903083 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -52,6 +56,15 @@
 				EE2684C42156DBA90074F14D /* LevelOne.swift */,
 			);
 			path = Levels;
+			sourceTree = "<group>";
+		};
+		EE2684C72157BB2C0074F14D /* Movements */ = {
+			isa = PBXGroup;
+			children = (
+				EE2684C82157BB410074F14D /* SpriteMovement.swift */,
+				EE2684CA2157BB780074F14D /* SpawnAtRandomLocation.swift */,
+			);
+			path = Movements;
 			sourceTree = "<group>";
 		};
 		EE68ADAB2156815700903083 = {
@@ -98,6 +111,7 @@
 		EE68ADD22156B48200903083 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				EE2684C72157BB2C0074F14D /* Movements */,
 				EE68ADD32156B48B00903083 /* Target.swift */,
 			);
 			path = Sprites;
@@ -175,12 +189,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE2684C32156D5AE0074F14D /* Level.swift in Sources */,
+				EE2684C92157BB410074F14D /* SpriteMovement.swift in Sources */,
 				EE68ADBE2156815700903083 /* GameScene.swift in Sources */,
 				EE68ADC02156815700903083 /* GameViewController.swift in Sources */,
 				EE2684C52156DBA90074F14D /* LevelOne.swift in Sources */,
 				EE2684C02156D3A60074F14D /* GameState.swift in Sources */,
 				EE68ADD42156B48B00903083 /* Target.swift in Sources */,
 				EE68ADB82156815700903083 /* AppDelegate.swift in Sources */,
+				EE2684CB2157BB780074F14D /* SpawnAtRandomLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

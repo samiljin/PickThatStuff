@@ -25,14 +25,8 @@ class TargetNode : SKSpriteNode {
         super.init(texture: texture, color: UIColor.clear, size: size)
     }
     
-    func spawnAtRandomLocation() {
-        let maxX = view.bounds.maxX
-        let maxY = view.bounds.maxY
-        
-        let x = Int(arc4random_uniform(UInt32(maxX - size.width))) + Int(size.width)
-        let y = Int(arc4random_uniform(UInt32(maxY - size.height))) + Int(size.height)
-        
-        position = CGPoint(x: x, y: y)
+    func performMovements(movements: Array<SpriteMovement>) {
+        for movement in movements { movement.perform(for: self, in: view) }
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -9,19 +9,44 @@
 import Foundation
 
 class GameState {
-    static let shared = GameState()
+    var timer: Timer?
+    var onGameOver: (() -> Void)?
+    var onPointsChanged: (() -> Void)?
+    var targetShouldMove: (() -> Void)?
+    
+    var currentLevel: Level?
+    
+    func start(level: Level) {
+        self.currentLevel = level
+        initTimer()
+        
+        self.targetShouldMove?()
+    }
     
     func getPoints() -> Int {
         return self.points
     }
     
-    func addPoints(points: Int) {
-        self.points += points
+    func onTargetHit() {
+        guard let level = currentLevel else { return }
+        
+        self.points += level.calculatePointsForHit(reactionTimeInMillis: 500)
+        self.targetShouldMove?()
     }
     
-    func resetPoints() {
-        self.points = 0
+    private func initTimer() {
+        guard let level = currentLevel else { return }
+        
+        self.timer = Timer.scheduledTimer(withTimeInterval: level.timeToReactInSeconds, repeats: false) {
+            [unowned self] _ in
+            self.onGameOver?()
+        }
     }
     
-    private var points = 0
+    private var points = 0 {
+        didSet {
+            self.onPointsChanged?()
+        }
+    }
 }
+

@@ -9,12 +9,18 @@
 import Foundation
 
 class LevelOne : Level {
-    var timeToReactInMillis: Int
+    var totalHitsOnCurrentLevel: Int
+    var timeToReactInSeconds: TimeInterval
     var totalHitsToGetToNextLevel: Int
     
     init() {
-        self.timeToReactInMillis = 3000
+        self.timeToReactInSeconds = 3.0
         self.totalHitsToGetToNextLevel = 10
+        self.totalHitsOnCurrentLevel = 0
+    }
+    
+    func nextSpriteMovements() -> Array<SpriteMovement> {
+        return [SpawnAtRandomLocation()]
     }
     
     func calculatePointsForHit(reactionTimeInMillis: Int) -> Int {
