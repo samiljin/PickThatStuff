@@ -7,12 +7,21 @@
 //
 
 import Foundation
+import SpriteKit
 
 protocol Level {
-    var timeToReactInSeconds: TimeInterval { get }
-    var totalHitsToGetToNextLevel: Int { get }
-    var totalHitsOnCurrentLevel: Int { get }
+    init(scene: SKScene)
     
-    func nextSpriteMovements() -> Array<SpriteMovement>
-    func calculatePointsForHit(reactionTimeInMillis: Int) -> Int
+    var scene: SKScene { get }
+    var number: Int { get }
+    var rounds: Int { get }
+
+    var timeToReactInSeconds: TimeInterval { get }
+    
+    // Tästä Dictionary missä movementit ja targetit
+    var targets: Array<SKSpriteNode> { get }
+    
+//    var targets1: Array<(move: SpriteMovement, node: SKSpriteNode)> { get }
+    
+    func startRound()
 }

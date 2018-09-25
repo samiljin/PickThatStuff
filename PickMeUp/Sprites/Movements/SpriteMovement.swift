@@ -10,5 +10,5 @@ import Foundation
 import SpriteKit
 
 protocol SpriteMovement {
-    func perform(for node: SKSpriteNode, in view: SKView)
+    static func perform(for node: SKSpriteNode, in scene: SKScene)
 }

@@ -23,10 +23,13 @@ class TargetNode : SKSpriteNode {
         )
         
         super.init(texture: texture, color: UIColor.clear, size: size)
-    }
-    
-    func performMovements(movements: Array<SpriteMovement>) {
-        for movement in movements { movement.perform(for: self, in: view) }
+        
+        physicsBody = SKPhysicsBody(circleOfRadius: max(size.width / 2, size.height / 2))
+        physicsBody?.allowsRotation = true
+        physicsBody?.friction = 0
+        physicsBody?.restitution = 1
+        physicsBody?.linearDamping = 0
+        physicsBody?.angularDamping = 0
     }
     
     required init?(coder aDecoder: NSCoder) {

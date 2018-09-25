@@ -10,51 +10,83 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
+    var currentLevel: Level?
     
-    var targetNode: TargetNode?
-    var gameState: GameState?
+    var currentRound = 0 {
+        didSet {
+            print("round: \(currentRound)")
+        }
+    }
+    
+    var targetHitCount = 0
+    
+    var points = 0 {
+        didSet {
+            print("points: \(points)")
+        }
+    }
+    
+    let levelFactory = LevelFactory()
     
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
         
-        self.gameState = GameState()
-        self.gameState?.targetShouldMove = moveTarget
-        self.gameState?.onPointsChanged = onPointsChanged
-        self.gameState?.onGameOver = onGameOver
+        let borderBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+        borderBody.friction = 0
+        self.physicsBody = borderBody
         
-        self.targetNode = TargetNode(view: view, scene: self)
-        self.addChild(targetNode!)
-        
-        self.gameState?.start(level: LevelOne())
+        startNextLevel()
     }
     
-    func onGameOver() {
-        print("GAME OVER!")
-    }
-    
-    func onPointsChanged() {
-        guard let points = self.gameState?.getPoints() else {
-            return
+    func startNextLevel() {
+        if let currentLevel = self.currentLevel {
+            removeChildren(in: currentLevel.targets)
         }
         
-        print("Points: \(points)")
+        let level = levelFactory.nextLevel().init(scene: self)
+        
+        resetHitCount()
+        resetCurrentRound()
+        
+        self.currentLevel = level
+        level.startRound()
     }
     
-    func moveTarget() {
-        guard let nextMovements = gameState?.currentLevel?.nextSpriteMovements() else {
-            return
-        }
+    func onTargetHit(target: TargetNode) {
+        guard let level = currentLevel else { return }
         
-        targetNode?.performMovements(movements: nextMovements)
+        points += 1
+        targetHitCount += 1
+
+        if targetHitCount == level.targets.count {
+            resetHitCount()
+            
+            if currentRound == level.rounds {
+                startNextLevel()
+            } else {
+                currentRound += 1
+                level.startRound()
+            }
+        }
+    }
+    
+    private func resetHitCount() {
+        targetHitCount = 0
+    }
+    
+    private func resetCurrentRound() {
+        currentRound = 0
     }
     
     func touchDown(atPoint point : CGPoint) {
-        guard let _ = self.nodes(at: point).first as? TargetNode else { return }
+        guard let node = self.nodes(at: point).first as? TargetNode else { return }
         
-        gameState!.onTargetHit()
+        onTargetHit(target: node)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches { self.touchDown(atPoint: touch.location(in: self)) }
     }
 }
+
+
