@@ -27,6 +27,7 @@ class GameScene: SKScene {
     }
     
     let levelFactory = LevelFactory()
+    var timer: Timer?
     
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
@@ -54,6 +55,8 @@ class GameScene: SKScene {
         
         self.currentLevel = level
         performMovementsToNodes()
+        
+        initTimerFor(level: level)
     }
     
     func onTargetHit(target: TargetNode) {
@@ -93,6 +96,8 @@ class GameScene: SKScene {
         
         currentRound += 1
         performMovementsToNodes()
+        
+        initTimerFor(level: level)
     }
     
     private func resetHitCount() {
@@ -101,6 +106,19 @@ class GameScene: SKScene {
     
     private func resetCurrentRound() {
         currentRound = 0
+    }
+    
+    func onGameOver() {
+        timer?.invalidate()
+        
+        print("GAME OVER!!")
+    }
+    
+    private func initTimerFor(level: Level) {
+        timer = Timer.scheduledTimer(withTimeInterval: level.timeToReactInSeconds, repeats: false) {
+            [unowned self] _ in
+            self.onGameOver()
+        }
     }
     
     func touchDown(atPoint point : CGPoint) {
