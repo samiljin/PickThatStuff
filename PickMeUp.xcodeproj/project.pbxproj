@@ -10,6 +10,13 @@
 		EE2684C32156D5AE0074F14D /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2684C22156D5AE0074F14D /* Level.swift */; };
 		EE2684C52156DBA90074F14D /* LevelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2684C42156DBA90074F14D /* LevelOne.swift */; };
 		EE2684C92157BB410074F14D /* SpriteMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2684C82157BB410074F14D /* SpriteMovement.swift */; };
+		EE4989F7215BF43A00E72FA7 /* LevelThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4989F6215BF43A00E72FA7 /* LevelThree.swift */; };
+		EE4989F9215BF4B600E72FA7 /* LevelFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4989F8215BF4B600E72FA7 /* LevelFour.swift */; };
+		EE4989FB215BF4E600E72FA7 /* MoveHorizontallytSlowly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4989FA215BF4E600E72FA7 /* MoveHorizontallytSlowly.swift */; };
+		EE4989FD215BF62D00E72FA7 /* LevelFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4989FC215BF62D00E72FA7 /* LevelFive.swift */; };
+		EE67C340215BF86400048AC4 /* LevelSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE67C33F215BF86400048AC4 /* LevelSix.swift */; };
+		EE67C342215BF88700048AC4 /* LevelSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE67C341215BF88700048AC4 /* LevelSeven.swift */; };
+		EE67C344215BF8AB00048AC4 /* LevelEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE67C343215BF8AB00048AC4 /* LevelEight.swift */; };
 		EE68ADB82156815700903083 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE68ADB72156815700903083 /* AppDelegate.swift */; };
 		EE68ADBE2156815700903083 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE68ADBD2156815700903083 /* GameScene.swift */; };
 		EE68ADC02156815700903083 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE68ADBF2156815700903083 /* GameViewController.swift */; };
@@ -26,6 +33,13 @@
 		EE2684C22156D5AE0074F14D /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		EE2684C42156DBA90074F14D /* LevelOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOne.swift; sourceTree = "<group>"; };
 		EE2684C82157BB410074F14D /* SpriteMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteMovement.swift; sourceTree = "<group>"; };
+		EE4989F6215BF43A00E72FA7 /* LevelThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThree.swift; sourceTree = "<group>"; };
+		EE4989F8215BF4B600E72FA7 /* LevelFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFour.swift; sourceTree = "<group>"; };
+		EE4989FA215BF4E600E72FA7 /* MoveHorizontallytSlowly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveHorizontallytSlowly.swift; sourceTree = "<group>"; };
+		EE4989FC215BF62D00E72FA7 /* LevelFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFive.swift; sourceTree = "<group>"; };
+		EE67C33F215BF86400048AC4 /* LevelSix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSix.swift; sourceTree = "<group>"; };
+		EE67C341215BF88700048AC4 /* LevelSeven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSeven.swift; sourceTree = "<group>"; };
+		EE67C343215BF8AB00048AC4 /* LevelEight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelEight.swift; sourceTree = "<group>"; };
 		EE68ADB42156815700903083 /* PickMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE68ADB72156815700903083 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE68ADBD2156815700903083 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -58,6 +72,12 @@
 				EE2684C42156DBA90074F14D /* LevelOne.swift */,
 				EE98CB1521595B9200441C51 /* LevelFactory.swift */,
 				EE98CB17215A7A3800441C51 /* LevelTwo.swift */,
+				EE4989F6215BF43A00E72FA7 /* LevelThree.swift */,
+				EE4989F8215BF4B600E72FA7 /* LevelFour.swift */,
+				EE4989FC215BF62D00E72FA7 /* LevelFive.swift */,
+				EE67C33F215BF86400048AC4 /* LevelSix.swift */,
+				EE67C341215BF88700048AC4 /* LevelSeven.swift */,
+				EE67C343215BF8AB00048AC4 /* LevelEight.swift */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -67,6 +87,7 @@
 			children = (
 				EE2684C82157BB410074F14D /* SpriteMovement.swift */,
 				EE98CB132159524300441C51 /* MoveNoWhere.swift */,
+				EE4989FA215BF4E600E72FA7 /* MoveHorizontallytSlowly.swift */,
 			);
 			path = Movements;
 			sourceTree = "<group>";
@@ -192,14 +213,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE2684C32156D5AE0074F14D /* Level.swift in Sources */,
+				EE4989F7215BF43A00E72FA7 /* LevelThree.swift in Sources */,
+				EE4989F9215BF4B600E72FA7 /* LevelFour.swift in Sources */,
 				EE2684C92157BB410074F14D /* SpriteMovement.swift in Sources */,
+				EE67C342215BF88700048AC4 /* LevelSeven.swift in Sources */,
 				EE68ADBE2156815700903083 /* GameScene.swift in Sources */,
 				EE98CB18215A7A3800441C51 /* LevelTwo.swift in Sources */,
+				EE4989FB215BF4E600E72FA7 /* MoveHorizontallytSlowly.swift in Sources */,
 				EE68ADC02156815700903083 /* GameViewController.swift in Sources */,
 				EE2684C52156DBA90074F14D /* LevelOne.swift in Sources */,
 				EE68ADD42156B48B00903083 /* Target.swift in Sources */,
 				EE98CB1621595B9200441C51 /* LevelFactory.swift in Sources */,
 				EE98CB142159524300441C51 /* MoveNoWhere.swift in Sources */,
+				EE4989FD215BF62D00E72FA7 /* LevelFive.swift in Sources */,
+				EE67C344215BF8AB00048AC4 /* LevelEight.swift in Sources */,
+				EE67C340215BF86400048AC4 /* LevelSix.swift in Sources */,
 				EE68ADB82156815700903083 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
