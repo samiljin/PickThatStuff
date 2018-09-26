@@ -40,7 +40,7 @@
 		EE67C33F215BF86400048AC4 /* LevelSix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSix.swift; sourceTree = "<group>"; };
 		EE67C341215BF88700048AC4 /* LevelSeven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSeven.swift; sourceTree = "<group>"; };
 		EE67C343215BF8AB00048AC4 /* LevelEight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelEight.swift; sourceTree = "<group>"; };
-		EE68ADB42156815700903083 /* PickMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE68ADB42156815700903083 /* PickTheStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickTheStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE68ADB72156815700903083 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE68ADBD2156815700903083 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		EE68ADBF2156815700903083 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		EE68ADB52156815700903083 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EE68ADB42156815700903083 /* PickMeUp.app */,
+				EE68ADB42156815700903083 /* PickTheStuff.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,9 +144,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EE68ADB32156815700903083 /* PickMeUp */ = {
+		EE68ADB32156815700903083 /* PickTheStuff */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE68ADCC2156815800903083 /* Build configuration list for PBXNativeTarget "PickMeUp" */;
+			buildConfigurationList = EE68ADCC2156815800903083 /* Build configuration list for PBXNativeTarget "PickTheStuff" */;
 			buildPhases = (
 				EE68ADB02156815700903083 /* Sources */,
 				EE68ADB12156815700903083 /* Frameworks */,
@@ -156,9 +156,9 @@
 			);
 			dependencies = (
 			);
-			name = PickMeUp;
+			name = PickTheStuff;
 			productName = PickMeUp;
-			productReference = EE68ADB42156815700903083 /* PickMeUp.app */;
+			productReference = EE68ADB42156815700903083 /* PickTheStuff.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -176,7 +176,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EE68ADAF2156815700903083 /* Build configuration list for PBXProject "PickMeUp" */;
+			buildConfigurationList = EE68ADAF2156815700903083 /* Build configuration list for PBXProject "PickTheStuff" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -189,7 +189,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EE68ADB32156815700903083 /* PickMeUp */,
+				EE68ADB32156815700903083 /* PickTheStuff */,
 			);
 		};
 /* End PBXProject section */
@@ -407,7 +407,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EE68ADAF2156815700903083 /* Build configuration list for PBXProject "PickMeUp" */ = {
+		EE68ADAF2156815700903083 /* Build configuration list for PBXProject "PickTheStuff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE68ADCA2156815800903083 /* Debug */,
@@ -416,7 +416,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE68ADCC2156815800903083 /* Build configuration list for PBXNativeTarget "PickMeUp" */ = {
+		EE68ADCC2156815800903083 /* Build configuration list for PBXNativeTarget "PickTheStuff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE68ADCD2156815800903083 /* Debug */,
