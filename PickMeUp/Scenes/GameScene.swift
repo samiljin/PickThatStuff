@@ -40,21 +40,26 @@ class GameScene: SKScene {
     
     func startNextLevel() {
         if let currentLevel = self.currentLevel {
-            removeChildren(in: currentLevel.targets)
+            removeChildren(in: currentLevel.targets.map {$0.node})
         }
         
         let level = levelFactory.nextLevel().init(scene: self)
+        
+        for target in level.targets {
+            self.addChild(target.node)
+        }
         
         resetHitCount()
         resetCurrentRound()
         
         self.currentLevel = level
-        level.startRound()
+        performMovementsToNodes()
     }
     
     func onTargetHit(target: TargetNode) {
         guard let level = currentLevel else { return }
         
+        target.removeFromParent()
         points += 1
         targetHitCount += 1
 
@@ -64,10 +69,30 @@ class GameScene: SKScene {
             if currentRound == level.rounds {
                 startNextLevel()
             } else {
-                currentRound += 1
-                level.startRound()
+                startNextRound()
             }
         }
+    }
+    
+    func performMovementsToNodes() {
+        guard let level = currentLevel else { return }
+        
+        for target in level.targets {
+            for movement in target.moves {
+                movement.perform(for: target.node, in: self)
+            }
+        }
+    }
+    
+    private func startNextRound() {
+        guard let level = currentLevel else { return }
+        
+        for target in level.targets {
+            self.addChild(target.node)
+        }
+        
+        currentRound += 1
+        performMovementsToNodes()
     }
     
     private func resetHitCount() {

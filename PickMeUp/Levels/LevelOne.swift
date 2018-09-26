@@ -15,7 +15,7 @@ class LevelOne : Level {
     var rounds: Int
     
     var timeToReactInSeconds: TimeInterval
-    var targets: Array<SKSpriteNode>
+    var targets: Array<(moves: [SpriteMovement.Type], node: SKSpriteNode)>
     
     required init(scene: SKScene) {
         self.scene = scene
@@ -23,20 +23,8 @@ class LevelOne : Level {
         self.rounds = 10
         self.timeToReactInSeconds = 3.0
         self.targets = [
-            TargetNode(view: scene.view!, scene: scene)
+            (moves: [MoveNoWhere.self], node: TargetNode(view: scene.view!, scene: scene))
         ]
-        
-        targets.forEach {
-            [unowned self] in
-            self.scene.addChild($0)
-        }
-    }
-    
-    func startRound() {
-        targets.forEach {
-            [unowned self] in
-            MoveNoWhere.perform(for: $0, in: self.scene)
-        }
     }
 }
 
