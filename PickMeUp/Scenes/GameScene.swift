@@ -10,31 +10,12 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-    var currentLevel: Level?
-    
-    var currentRound = 0 {
-        didSet {
-            print("round: \(currentRound)")
-        }
-    }
-    
-    var targetHitCount = 0
-    
-    var points = 0 {
-        didSet {
-            print("points: \(points)")
-        }
-    }
-    
-    let levelFactory = LevelFactory()
-    var timer: Timer?
-    
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
         
-        let borderBody = SKPhysicsBody(edgeLoopFrom: self.frame)
-        borderBody.friction = 0
-        self.physicsBody = borderBody
+        let physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
+        physicsBody.friction = 0
+        self.physicsBody = physicsBody
         
         startNextLevel()
     }
@@ -56,6 +37,7 @@ class GameScene: SKScene {
         self.currentLevel = level
         performMovementsToNodes()
         
+        timeLeftOnCurrentRound = level.timeToReactInSeconds
         initTimerFor(level: level)
     }
     
@@ -97,6 +79,7 @@ class GameScene: SKScene {
         currentRound += 1
         performMovementsToNodes()
         
+        timeLeftOnCurrentRound = level.timeToReactInSeconds
         initTimerFor(level: level)
     }
     
@@ -109,15 +92,20 @@ class GameScene: SKScene {
     }
     
     func onGameOver() {
-        timer?.invalidate()
+        roundTimer?.invalidate()
         
         print("GAME OVER!!")
     }
     
     private func initTimerFor(level: Level) {
-        timer = Timer.scheduledTimer(withTimeInterval: level.timeToReactInSeconds, repeats: false) {
+        roundTimer?.invalidate()
+        roundTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) {
             [unowned self] _ in
-            self.onGameOver()
+            self.timeLeftOnCurrentRound -= 0.05
+            
+            if self.timeLeftOnCurrentRound <= 0.0 {
+                self.onGameOver()
+            }
         }
     }
     
@@ -129,6 +117,31 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches { self.touchDown(atPoint: touch.location(in: self)) }
+    }
+    
+    private var currentLevel: Level?
+    
+    private var currentRound = 0 {
+        didSet {
+            print("round: \(currentRound)")
+        }
+    }
+    
+    private var targetHitCount = 0
+    
+    private var points = 0 {
+        didSet {
+            print(points)
+        }
+    }
+    
+    private let levelFactory = LevelFactory()
+    
+    private var roundTimer: Timer?
+    private var timeLeftOnCurrentRound: TimeInterval = 0 {
+        didSet {
+            print(String(format: "%.2f", timeLeftOnCurrentRound))
+        }
     }
 }
 

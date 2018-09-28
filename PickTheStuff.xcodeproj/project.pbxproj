@@ -82,16 +82,6 @@
 			path = Levels;
 			sourceTree = "<group>";
 		};
-		EE2684C72157BB2C0074F14D /* Movements */ = {
-			isa = PBXGroup;
-			children = (
-				EE2684C82157BB410074F14D /* SpriteMovement.swift */,
-				EE98CB132159524300441C51 /* MoveNoWhere.swift */,
-				EE4989FA215BF4E600E72FA7 /* MoveHorizontallytSlowly.swift */,
-			);
-			path = Movements;
-			sourceTree = "<group>";
-		};
 		EE68ADAB2156815700903083 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +101,7 @@
 		EE68ADB62156815700903083 /* PickMeUp */ = {
 			isa = PBXGroup;
 			children = (
+				EEC7AD68215E20BB005176DE /* SpriteMovements */,
 				EE2684C12156D5A40074F14D /* Levels */,
 				EE68ADD22156B48200903083 /* Sprites */,
 				EE68ADCF215682AB00903083 /* Scenes */,
@@ -135,10 +126,19 @@
 		EE68ADD22156B48200903083 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
-				EE2684C72157BB2C0074F14D /* Movements */,
 				EE68ADD32156B48B00903083 /* Target.swift */,
 			);
 			path = Sprites;
+			sourceTree = "<group>";
+		};
+		EEC7AD68215E20BB005176DE /* SpriteMovements */ = {
+			isa = PBXGroup;
+			children = (
+				EE2684C82157BB410074F14D /* SpriteMovement.swift */,
+				EE98CB132159524300441C51 /* MoveNoWhere.swift */,
+				EE4989FA215BF4E600E72FA7 /* MoveHorizontallytSlowly.swift */,
+			);
+			path = SpriteMovements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
