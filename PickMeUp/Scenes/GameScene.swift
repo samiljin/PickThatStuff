@@ -10,14 +10,43 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
+    var statsBarHeight: CGFloat {
+        get {
+            return self.frame.height * 0.05
+        }
+    }
+    
+    let statBarDividerHeight: CGFloat = 1
+    
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
         
-        let physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
+        setupScene()
+        startNextLevel()
+    }
+    
+    func setupScene() {
+        let physicsBodyFrame = CGRect(
+            x: 0,
+            y: 0,
+            width: frame.width,
+            height: frame.height - statsBarHeight - statBarDividerHeight
+        )
+        
+        let physicsBody = SKPhysicsBody(edgeLoopFrom: physicsBodyFrame)
         physicsBody.friction = 0
         self.physicsBody = physicsBody
         
-        startNextLevel()
+        let strokePath = CGPath(
+            rect: CGRect(x: 0, y: frame.maxY - statsBarHeight, width: size.width, height: statBarDividerHeight),
+            transform: nil
+        )
+        let stroke = SKShapeNode(path: strokePath)
+        stroke.fillColor = UIColor.black
+        addChild(stroke)
+        
+        addChild(pointLabel)
+        addChild(timeLeftOnCurrentRoundLabel)
     }
     
     func startNextLevel() {
@@ -92,18 +121,17 @@ class GameScene: SKScene {
     }
     
     func onGameOver() {
-        roundTimer?.invalidate()
-        
         print("GAME OVER!!")
     }
     
     private func initTimerFor(level: Level) {
         roundTimer?.invalidate()
-        roundTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) {
-            [unowned self] _ in
-            self.timeLeftOnCurrentRound -= 0.05
+        roundTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) {
+            [unowned self] timer in
+            self.timeLeftOnCurrentRound -= timer.timeInterval
             
             if self.timeLeftOnCurrentRound <= 0.0 {
+                timer.invalidate()
                 self.onGameOver()
             }
         }
@@ -131,18 +159,55 @@ class GameScene: SKScene {
     
     private var points = 0 {
         didSet {
-            print(points)
+            pointLabel.text = pointsText
+        }
+    }
+    
+    var pointsText: String {
+        get {
+            return "Points: \(points)"
+        }
+    }
+    
+    private lazy var pointLabel: SKLabelNode = {
+        let label = SKLabelNode(text: pointsText)
+        label.fontSize = self.statsBarHeight / 2
+        label.fontColor = UIColor.black
+        label.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
+        label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        
+        let y = frame.maxY - (statsBarHeight - label.calculateAccumulatedFrame().height) / 2
+        label.position = CGPoint(x: 15, y: y)
+        return label
+    }()
+    
+    private lazy var timeLeftOnCurrentRoundLabel: SKLabelNode = {
+        let label = SKLabelNode(text: timeLeftOnCurrentRoundText)
+        label.fontSize = self.statsBarHeight / 2
+        label.fontColor = UIColor.black
+        label.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
+        label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
+        
+        let y = frame.maxY - (statsBarHeight - label.calculateAccumulatedFrame().height) / 2
+        label.position = CGPoint(x: frame.maxX - 15, y: y)
+        return label
+    }()
+    
+    private var timeLeftOnCurrentRound: TimeInterval = 0 {
+        didSet {
+            timeLeftOnCurrentRoundLabel.text = timeLeftOnCurrentRoundText
+        }
+    }
+    
+    private var timeLeftOnCurrentRoundText: String {
+        get {
+            let formattedString = String(format: "%.2f", timeLeftOnCurrentRound)
+            return "Time \(formattedString)"
         }
     }
     
     private let levelFactory = LevelFactory()
-    
     private var roundTimer: Timer?
-    private var timeLeftOnCurrentRound: TimeInterval = 0 {
-        didSet {
-            print(String(format: "%.2f", timeLeftOnCurrentRound))
-        }
-    }
 }
 
 
