@@ -10,15 +10,15 @@ import Foundation
 import SpriteKit
 
 class MoveHorizontallytSlowly: SpriteMovement {
-    static func perform(for node: SKSpriteNode, in scene: SKScene) {
-        let maxX = scene.view!.bounds.maxX
-        let maxY = scene.view!.bounds.maxY
+    static func perform(for node: SKSpriteNode, in scene: PlayableScene) {
+        let rect = scene.getPlayableRect()
         
-        let x = Int(arc4random_uniform(UInt32(maxX - node.size.width))) + Int(node.size.width)
-        let y = Int(arc4random_uniform(UInt32(maxY - node.size.height))) + Int(node.size.height)
-        
+        let x = Int(arc4random_uniform(UInt32(rect.maxX - node.size.width))) + Int(node.size.width)
+        let y = Int(arc4random_uniform(UInt32(rect.maxY - node.size.height))) + Int(node.size.height)
+
         let impulsePower = arc4random_uniform(UInt32(15)) + 5
-        scene.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        scene.setGravity(to: CGVector.zero)
+
         node.position = CGPoint(x: x, y: y)
         node.physicsBody?.applyImpulse(CGVector(dx: Int(impulsePower), dy: 0))
     }

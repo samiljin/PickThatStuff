@@ -27,6 +27,7 @@
 		EE98CB142159524300441C51 /* MoveNoWhere.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE98CB132159524300441C51 /* MoveNoWhere.swift */; };
 		EE98CB1621595B9200441C51 /* LevelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE98CB1521595B9200441C51 /* LevelFactory.swift */; };
 		EE98CB18215A7A3800441C51 /* LevelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE98CB17215A7A3800441C51 /* LevelTwo.swift */; };
+		EEA23B76216685FA00B9E907 /* PlayableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA23B75216685FA00B9E907 /* PlayableScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		EE98CB132159524300441C51 /* MoveNoWhere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveNoWhere.swift; sourceTree = "<group>"; };
 		EE98CB1521595B9200441C51 /* LevelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFactory.swift; sourceTree = "<group>"; };
 		EE98CB17215A7A3800441C51 /* LevelTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwo.swift; sourceTree = "<group>"; };
+		EEA23B75216685FA00B9E907 /* PlayableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				EE68ADBD2156815700903083 /* GameScene.swift */,
+				EEA23B75216685FA00B9E907 /* PlayableScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				EE2684C52156DBA90074F14D /* LevelOne.swift in Sources */,
 				EE68ADD42156B48B00903083 /* Target.swift in Sources */,
 				EE98CB1621595B9200441C51 /* LevelFactory.swift in Sources */,
+				EEA23B76216685FA00B9E907 /* PlayableScene.swift in Sources */,
 				EE98CB142159524300441C51 /* MoveNoWhere.swift in Sources */,
 				EE4989FD215BF62D00E72FA7 /* LevelFive.swift in Sources */,
 				EE67C344215BF8AB00048AC4 /* LevelEight.swift in Sources */,

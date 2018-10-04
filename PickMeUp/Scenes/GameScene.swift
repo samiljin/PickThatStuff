@@ -26,14 +26,7 @@ class GameScene: SKScene {
     }
     
     func setupScene() {
-        let physicsBodyFrame = CGRect(
-            x: 0,
-            y: 0,
-            width: frame.width,
-            height: frame.height - statsBarHeight - statBarDividerHeight
-        )
-        
-        let physicsBody = SKPhysicsBody(edgeLoopFrom: physicsBodyFrame)
+        let physicsBody = SKPhysicsBody(edgeLoopFrom: getPlayableRect())
         physicsBody.friction = 0
         self.physicsBody = physicsBody
         
@@ -208,6 +201,20 @@ class GameScene: SKScene {
     
     private let levelFactory = LevelFactory()
     private var roundTimer: Timer?
+}
+
+extension GameScene : PlayableScene {
+    func getPlayableRect() -> CGRect {
+        let rect = CGRect(x: 0,
+                          y: 0,
+                          width: frame.width,
+                          height: frame.height - statsBarHeight - statBarDividerHeight)
+        return rect
+    }
+    
+    func setGravity(to vector: CGVector) {
+        self.physicsWorld.gravity = vector
+    }
 }
 
 
