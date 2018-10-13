@@ -30,14 +30,7 @@ class GameScene: SKScene {
         physicsBody.friction = 0
         self.physicsBody = physicsBody
         
-        let strokePath = CGPath(
-            rect: CGRect(x: 0, y: frame.maxY - statsBarHeight, width: size.width, height: statBarDividerHeight),
-            transform: nil
-        )
-        let stroke = SKShapeNode(path: strokePath)
-        stroke.fillColor = UIColor.black
-        addChild(stroke)
-        
+        addChild(timeIndicatorBar)
         addChild(pointLabel)
         addChild(timeLeftOnCurrentRoundLabel)
     }
@@ -92,6 +85,8 @@ class GameScene: SKScene {
     }
     
     private func startNextRound() {
+        timeIndicatorBar.reset()
+        
         guard let level = currentLevel else { return }
         
         for target in level.targets {
@@ -103,6 +98,7 @@ class GameScene: SKScene {
         
         timeLeftOnCurrentRound = level.timeToReactInSeconds
         initTimerFor(level: level)
+        timeIndicatorBar.animate(duration: level.timeToReactInSeconds)
     }
     
     private func resetHitCount() {
@@ -198,6 +194,11 @@ class GameScene: SKScene {
             return "Time \(formattedString)"
         }
     }
+    
+    private lazy var timeIndicatorBar: TimeBar = {
+        let bar = TimeBar(view: self.view!)
+        return bar
+    }()
     
     private let levelFactory = LevelFactory()
     private var roundTimer: Timer?
