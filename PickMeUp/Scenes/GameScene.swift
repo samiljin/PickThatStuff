@@ -54,6 +54,7 @@ class GameScene: SKScene {
         
         timeLeftOnCurrentRound = level.timeToReactInSeconds
         initTimerFor(level: level)
+        timeIndicatorBar.animate(duration: level.timeToReactInSeconds)
     }
     
     func onTargetHit(target: TargetNode) {
