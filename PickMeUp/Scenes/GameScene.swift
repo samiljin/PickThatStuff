@@ -155,7 +155,6 @@ extension GameScene : PlayableScene {
         // TODO: This bugs on the first level because hud childrens are not yeat drawn.
         let statsHeight = hud.calculateAccumulatedFrame().height + timeIndicatorBar.frame.height
         
-        print(statsHeight)
         let rect = CGRect(x: 0,
                           y: 0,
                           width: frame.width,

@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class HUD: SKNode {
-    let fontSize: CGFloat = 20
+    let fontSize: CGFloat = 15
     let margin: CGFloat = 10
     
     override init() {
@@ -22,25 +22,28 @@ class HUD: SKNode {
     }
     
     func set(points: Int) {
+        let text = "Points: \(points)"
+        
         guard self.pointsLabel == nil else {
-            self.pointsLabel?.text = "\(points)"
+            self.pointsLabel?.text = text
             return
         }
         
-        pointsLabel = initLabel(with: "\(points)")
+        pointsLabel = initLabel(with: text)
         pointsLabel?.horizontalAlignmentMode = .left
         pointsLabel?.position = CGPoint(x: margin, y: -margin)
         addChild(pointsLabel!)
     }
     
     func set(level: Int) {
+        let text = "Level: \(level)"
         guard let scene = self.scene else { return }
         guard self.levelLabel == nil else {
-            self.levelLabel?.text = "\(level)"
+            self.levelLabel?.text = text
             return
         }
         
-        levelLabel = initLabel(with: "\(level)")
+        levelLabel = initLabel(with: text)
         levelLabel?.horizontalAlignmentMode = .center
         levelLabel?.position = CGPoint(x: scene.frame.width / 2, y: -margin)
         
@@ -48,10 +51,9 @@ class HUD: SKNode {
     }
     
     func set(currentRound current: Int, levelMaxRounds max: Int) {
+        let text = "Round: \(current)/\(max)"
+        
         guard let scene = self.scene else { return }
-        
-        let text = "\(current)/\(max)"
-        
         guard self.roundLabel == nil else {
             self.roundLabel?.text = text
             return
