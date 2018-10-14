@@ -24,7 +24,8 @@
 		EE68ADC52156815800903083 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE68ADC42156815800903083 /* Assets.xcassets */; };
 		EE68ADC82156815800903083 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE68ADC62156815800903083 /* LaunchScreen.storyboard */; };
 		EE68ADD42156B48B00903083 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE68ADD32156B48B00903083 /* Target.swift */; };
-		EE7D169521721B0F0060E78E /* TimeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D169421721B0F0060E78E /* TimeBar.swift */; };
+		EE7D169521721B0F0060E78E /* TimeIndicatorBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D169421721B0F0060E78E /* TimeIndicatorBar.swift */; };
+		EE7D1697217247BA0060E78E /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D1696217247BA0060E78E /* HUD.swift */; };
 		EE98CB142159524300441C51 /* MoveNoWhere.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE98CB132159524300441C51 /* MoveNoWhere.swift */; };
 		EE98CB1621595B9200441C51 /* LevelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE98CB1521595B9200441C51 /* LevelFactory.swift */; };
 		EE98CB18215A7A3800441C51 /* LevelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE98CB17215A7A3800441C51 /* LevelTwo.swift */; };
@@ -51,7 +52,8 @@
 		EE68ADC72156815800903083 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE68ADC92156815800903083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE68ADD32156B48B00903083 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
-		EE7D169421721B0F0060E78E /* TimeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBar.swift; sourceTree = "<group>"; };
+		EE7D169421721B0F0060E78E /* TimeIndicatorBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIndicatorBar.swift; sourceTree = "<group>"; };
+		EE7D1696217247BA0060E78E /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		EE98CB132159524300441C51 /* MoveNoWhere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveNoWhere.swift; sourceTree = "<group>"; };
 		EE98CB1521595B9200441C51 /* LevelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFactory.swift; sourceTree = "<group>"; };
 		EE98CB17215A7A3800441C51 /* LevelTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwo.swift; sourceTree = "<group>"; };
@@ -132,7 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				EE68ADD32156B48B00903083 /* Target.swift */,
-				EE7D169421721B0F0060E78E /* TimeBar.swift */,
+				EE7D169421721B0F0060E78E /* TimeIndicatorBar.swift */,
+				EE7D1696217247BA0060E78E /* HUD.swift */,
 			);
 			path = Sprites;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE2684C32156D5AE0074F14D /* Level.swift in Sources */,
+				EE7D1697217247BA0060E78E /* HUD.swift in Sources */,
 				EE4989F7215BF43A00E72FA7 /* LevelThree.swift in Sources */,
 				EE4989F9215BF4B600E72FA7 /* LevelFour.swift in Sources */,
 				EE2684C92157BB410074F14D /* SpriteMovement.swift in Sources */,
@@ -235,7 +239,7 @@
 				EE4989FD215BF62D00E72FA7 /* LevelFive.swift in Sources */,
 				EE67C344215BF8AB00048AC4 /* LevelEight.swift in Sources */,
 				EE67C340215BF86400048AC4 /* LevelSix.swift in Sources */,
-				EE7D169521721B0F0060E78E /* TimeBar.swift in Sources */,
+				EE7D169521721B0F0060E78E /* TimeIndicatorBar.swift in Sources */,
 				EE68ADB82156815700903083 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
