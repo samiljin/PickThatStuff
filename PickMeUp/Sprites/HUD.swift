@@ -21,8 +21,8 @@ class HUD: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(points: Int) {
-        let text = "Points: \(points)"
+    func set(points: Double) {
+        let text = String(format: "Points: %.2f", points)
         
         guard self.pointsLabel == nil else {
             self.pointsLabel?.text = text

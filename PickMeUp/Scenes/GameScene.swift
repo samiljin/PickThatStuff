@@ -47,6 +47,12 @@ class GameScene: SKScene {
     }
     
     private func startNextRound() {
+        self.points += PointCalculator.execute(
+            level: self.currentLevel!,
+            round: currentRound,
+            timeLeftOnRound: roundTimer!.fireDate.timeIntervalSinceNow
+        )
+        
         timeIndicatorBar.reset()
         
         guard let level = currentLevel else { return }
@@ -81,7 +87,6 @@ class GameScene: SKScene {
         guard let level = currentLevel else { return }
         
         target.removeFromParent()
-        points += 1
         targetHitCount += 1
 
         if targetHitCount == level.targets.count {
@@ -137,7 +142,7 @@ class GameScene: SKScene {
     private var currentLevel: Level?
     private var currentRound = 0
     private var targetHitCount = 0
-    private var points = 0
+    private var points: Double = 0.0
     private var timeLeftOnCurrentRound: TimeInterval = 0
 
     private lazy var timeIndicatorBar: TimeIndicatorBar = {
