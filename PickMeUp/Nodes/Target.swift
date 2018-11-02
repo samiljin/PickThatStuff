@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 import CoreGraphics
 
-class TargetNode : SKSpriteNode {
+class TargetNode : SKShapeNode {
     let view: SKView
     
     init(view: SKView, scene: SKScene) {
@@ -20,15 +20,19 @@ class TargetNode : SKSpriteNode {
             width: view.bounds.height * 0.05,
             height: view.bounds.height * 0.05
         )
+    
+        super.init()
         
-        let texture = SKTexture(imageNamed: "target")
-            
-        super.init(texture: texture, color: UIColor.clear, size: size)
+        path = CGPath(
+            rect: CGRect(x: 0, y: 0, width: size.width, height: size.height),
+            transform: nil
+        )
         
-        color = UIColor.blue
-        colorBlendFactor = 1
+        lineWidth = 2.0
+        fillColor = .blue
+        strokeColor = .black
         
-        physicsBody = SKPhysicsBody(circleOfRadius: max(size.width / 2, size.height / 2))
+        physicsBody = SKPhysicsBody(rectangleOf: size)
         physicsBody?.allowsRotation = true
         physicsBody?.friction = 0
         physicsBody?.allowsRotation = false
