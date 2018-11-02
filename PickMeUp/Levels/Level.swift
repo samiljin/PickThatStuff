@@ -17,11 +17,6 @@ protocol Level {
     var rounds: Int { get }
 
     var timeToReactInSeconds: TimeInterval { get }
-    
-    // Tästä Dictionary missä movementit ja targetit
-//    var targets: Array<SKSpriteNode> { get }
-    
-    var targets: Array<(moves: [SpriteMovement.Type], node: SKSpriteNode)> { get }
-    
-//    func startRound()
+
+    var targets: Array<(moves: [NodeMovement.Type], node: SKNode)> { get }
 }

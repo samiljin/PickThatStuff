@@ -15,7 +15,7 @@ class LevelFour : Level {
     var rounds: Int
     
     var timeToReactInSeconds: TimeInterval
-    var targets: Array<(moves: [SpriteMovement.Type], node: SKSpriteNode)>
+    var targets: Array<(moves: [NodeMovement.Type], node: SKNode)>
     
     required init(scene: SKScene) {
         self.scene = scene

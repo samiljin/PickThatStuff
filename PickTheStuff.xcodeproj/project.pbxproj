@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		EE2684C32156D5AE0074F14D /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2684C22156D5AE0074F14D /* Level.swift */; };
 		EE2684C52156DBA90074F14D /* LevelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2684C42156DBA90074F14D /* LevelOne.swift */; };
-		EE2684C92157BB410074F14D /* SpriteMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2684C82157BB410074F14D /* SpriteMovement.swift */; };
+		EE2684C92157BB410074F14D /* NodeMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2684C82157BB410074F14D /* NodeMovement.swift */; };
+		EE3B2DB021791344002F0C9B /* MoveRandomlySlowly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3B2DAF21791344002F0C9B /* MoveRandomlySlowly.swift */; };
 		EE4989F7215BF43A00E72FA7 /* LevelThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4989F6215BF43A00E72FA7 /* LevelThree.swift */; };
 		EE4989F9215BF4B600E72FA7 /* LevelFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4989F8215BF4B600E72FA7 /* LevelFour.swift */; };
 		EE4989FB215BF4E600E72FA7 /* MoveHorizontallytSlowly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4989FA215BF4E600E72FA7 /* MoveHorizontallytSlowly.swift */; };
@@ -30,13 +31,16 @@
 		EE98CB142159524300441C51 /* MoveNoWhere.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE98CB132159524300441C51 /* MoveNoWhere.swift */; };
 		EE98CB1621595B9200441C51 /* LevelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE98CB1521595B9200441C51 /* LevelFactory.swift */; };
 		EE98CB18215A7A3800441C51 /* LevelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE98CB17215A7A3800441C51 /* LevelTwo.swift */; };
+		EE9FD49821778BDE002E5206 /* StartUpScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9FD49721778BDE002E5206 /* StartUpScene.swift */; };
+		EE9FD49A21778D1B002E5206 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9FD49921778D1B002E5206 /* Button.swift */; };
 		EEA23B76216685FA00B9E907 /* PlayableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA23B75216685FA00B9E907 /* PlayableScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EE2684C22156D5AE0074F14D /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		EE2684C42156DBA90074F14D /* LevelOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOne.swift; sourceTree = "<group>"; };
-		EE2684C82157BB410074F14D /* SpriteMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteMovement.swift; sourceTree = "<group>"; };
+		EE2684C82157BB410074F14D /* NodeMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeMovement.swift; sourceTree = "<group>"; };
+		EE3B2DAF21791344002F0C9B /* MoveRandomlySlowly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveRandomlySlowly.swift; sourceTree = "<group>"; };
 		EE4989F6215BF43A00E72FA7 /* LevelThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThree.swift; sourceTree = "<group>"; };
 		EE4989F8215BF4B600E72FA7 /* LevelFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFour.swift; sourceTree = "<group>"; };
 		EE4989FA215BF4E600E72FA7 /* MoveHorizontallytSlowly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveHorizontallytSlowly.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 		EE98CB132159524300441C51 /* MoveNoWhere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveNoWhere.swift; sourceTree = "<group>"; };
 		EE98CB1521595B9200441C51 /* LevelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFactory.swift; sourceTree = "<group>"; };
 		EE98CB17215A7A3800441C51 /* LevelTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwo.swift; sourceTree = "<group>"; };
+		EE9FD49721778BDE002E5206 /* StartUpScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpScene.swift; sourceTree = "<group>"; };
+		EE9FD49921778D1B002E5206 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		EEA23B75216685FA00B9E907 /* PlayableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				EE7D16982173672E0060E78E /* Utils */,
-				EEC7AD68215E20BB005176DE /* SpriteMovements */,
+				EEC7AD68215E20BB005176DE /* NodeMovements */,
 				EE2684C12156D5A40074F14D /* Levels */,
 				EE68ADD22156B48200903083 /* Sprites */,
 				EE68ADCF215682AB00903083 /* Scenes */,
@@ -129,6 +135,7 @@
 			children = (
 				EE68ADBD2156815700903083 /* GameScene.swift */,
 				EEA23B75216685FA00B9E907 /* PlayableScene.swift */,
+				EE9FD49721778BDE002E5206 /* StartUpScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -139,6 +146,7 @@
 				EE68ADD32156B48B00903083 /* Target.swift */,
 				EE7D169421721B0F0060E78E /* TimeIndicatorBar.swift */,
 				EE7D1696217247BA0060E78E /* HUD.swift */,
+				EE9FD49921778D1B002E5206 /* Button.swift */,
 			);
 			path = Sprites;
 			sourceTree = "<group>";
@@ -151,14 +159,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		EEC7AD68215E20BB005176DE /* SpriteMovements */ = {
+		EEC7AD68215E20BB005176DE /* NodeMovements */ = {
 			isa = PBXGroup;
 			children = (
-				EE2684C82157BB410074F14D /* SpriteMovement.swift */,
+				EE2684C82157BB410074F14D /* NodeMovement.swift */,
 				EE98CB132159524300441C51 /* MoveNoWhere.swift */,
 				EE4989FA215BF4E600E72FA7 /* MoveHorizontallytSlowly.swift */,
+				EE3B2DAF21791344002F0C9B /* MoveRandomlySlowly.swift */,
 			);
-			path = SpriteMovements;
+			path = NodeMovements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,13 +242,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE2684C32156D5AE0074F14D /* Level.swift in Sources */,
+				EE9FD49A21778D1B002E5206 /* Button.swift in Sources */,
 				EE7D1697217247BA0060E78E /* HUD.swift in Sources */,
 				EE4989F7215BF43A00E72FA7 /* LevelThree.swift in Sources */,
 				EE4989F9215BF4B600E72FA7 /* LevelFour.swift in Sources */,
-				EE2684C92157BB410074F14D /* SpriteMovement.swift in Sources */,
+				EE2684C92157BB410074F14D /* NodeMovement.swift in Sources */,
 				EE7D169A2173673B0060E78E /* PointCalculator.swift in Sources */,
 				EE67C342215BF88700048AC4 /* LevelSeven.swift in Sources */,
 				EE68ADBE2156815700903083 /* GameScene.swift in Sources */,
+				EE9FD49821778BDE002E5206 /* StartUpScene.swift in Sources */,
 				EE98CB18215A7A3800441C51 /* LevelTwo.swift in Sources */,
 				EE4989FB215BF4E600E72FA7 /* MoveHorizontallytSlowly.swift in Sources */,
 				EE68ADC02156815700903083 /* GameViewController.swift in Sources */,
@@ -248,6 +259,7 @@
 				EE98CB1621595B9200441C51 /* LevelFactory.swift in Sources */,
 				EEA23B76216685FA00B9E907 /* PlayableScene.swift in Sources */,
 				EE98CB142159524300441C51 /* MoveNoWhere.swift in Sources */,
+				EE3B2DB021791344002F0C9B /* MoveRandomlySlowly.swift in Sources */,
 				EE4989FD215BF62D00E72FA7 /* LevelFive.swift in Sources */,
 				EE67C344215BF8AB00048AC4 /* LevelEight.swift in Sources */,
 				EE67C340215BF86400048AC4 /* LevelSix.swift in Sources */,

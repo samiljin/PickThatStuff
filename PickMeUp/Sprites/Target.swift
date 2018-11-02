@@ -8,25 +8,30 @@
 
 import Foundation
 import SpriteKit
+import CoreGraphics
 
 class TargetNode : SKSpriteNode {
     let view: SKView
     
     init(view: SKView, scene: SKScene) {
         self.view = view
-
-        let texture = SKTexture(imageNamed: "target")
         
         let size = CGSize(
             width: view.bounds.height * 0.05,
             height: view.bounds.height * 0.05
         )
         
+        let texture = SKTexture(imageNamed: "target")
+            
         super.init(texture: texture, color: UIColor.clear, size: size)
+        
+        color = UIColor.blue
+        colorBlendFactor = 1
         
         physicsBody = SKPhysicsBody(circleOfRadius: max(size.width / 2, size.height / 2))
         physicsBody?.allowsRotation = true
         physicsBody?.friction = 0
+        physicsBody?.allowsRotation = false
         physicsBody?.restitution = 1
         physicsBody?.linearDamping = 0
         physicsBody?.angularDamping = 0

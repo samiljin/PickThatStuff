@@ -9,12 +9,12 @@
 import Foundation
 import SpriteKit
 
-class MoveNoWhere: SpriteMovement {
-    static func perform(for node: SKSpriteNode, in scene: PlayableScene) {
+class MoveNoWhere: NodeMovement {
+    static func perform(for node: SKNode, in scene: PlayableScene) {
         let rect = scene.getPlayableRect()
-
-        let x = Int(arc4random_uniform(UInt32(rect.maxX - node.size.width)))
-        let y = Int(arc4random_uniform(UInt32(rect.maxY - node.size.height)))
+        
+        let x = Int(arc4random_uniform(UInt32(rect.maxX - node.frame.size.width)))
+        let y = Int(arc4random_uniform(UInt32(rect.maxY - node.frame.size.height)))
 
         scene.setGravity(to: CGVector.zero)
         node.position = CGPoint(x: x, y: y)
