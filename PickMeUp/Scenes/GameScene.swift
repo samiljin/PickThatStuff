@@ -18,7 +18,10 @@ class GameScene: SKScene {
         self.physicsBody = physicsBody
         
         setupNodes()
-        startNextLevel()
+        
+        let countDownTimer = CountDownTimer()
+        addChild(countDownTimer)
+        countDownTimer.count(from: 3, to: 0, completion: startNextLevel)
     }
     
     func setupNodes() {

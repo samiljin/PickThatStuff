@@ -34,6 +34,7 @@
 		EE9FD49821778BDE002E5206 /* StartUpScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9FD49721778BDE002E5206 /* StartUpScene.swift */; };
 		EE9FD49A21778D1B002E5206 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9FD49921778D1B002E5206 /* Button.swift */; };
 		EEA23B76216685FA00B9E907 /* PlayableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA23B75216685FA00B9E907 /* PlayableScene.swift */; };
+		EEBFA16B218C93360047B3A3 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBFA16A218C93360047B3A3 /* CountDownTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		EE9FD49721778BDE002E5206 /* StartUpScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpScene.swift; sourceTree = "<group>"; };
 		EE9FD49921778D1B002E5206 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		EEA23B75216685FA00B9E907 /* PlayableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableScene.swift; sourceTree = "<group>"; };
+		EEBFA16A218C93360047B3A3 /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +120,7 @@
 				EE7D16982173672E0060E78E /* Utils */,
 				EEC7AD68215E20BB005176DE /* NodeMovements */,
 				EE2684C12156D5A40074F14D /* Levels */,
-				EE68ADD22156B48200903083 /* Sprites */,
+				EE68ADD22156B48200903083 /* Nodes */,
 				EE68ADCF215682AB00903083 /* Scenes */,
 				EE68ADB72156815700903083 /* AppDelegate.swift */,
 				EE68ADBF2156815700903083 /* GameViewController.swift */,
@@ -140,15 +142,16 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		EE68ADD22156B48200903083 /* Sprites */ = {
+		EE68ADD22156B48200903083 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
 				EE68ADD32156B48B00903083 /* Target.swift */,
 				EE7D169421721B0F0060E78E /* TimeIndicatorBar.swift */,
 				EE7D1696217247BA0060E78E /* HUD.swift */,
 				EE9FD49921778D1B002E5206 /* Button.swift */,
+				EEBFA16A218C93360047B3A3 /* CountDownTimer.swift */,
 			);
-			path = Sprites;
+			path = Nodes;
 			sourceTree = "<group>";
 		};
 		EE7D16982173672E0060E78E /* Utils */ = {
@@ -259,6 +262,7 @@
 				EE98CB1621595B9200441C51 /* LevelFactory.swift in Sources */,
 				EEA23B76216685FA00B9E907 /* PlayableScene.swift in Sources */,
 				EE98CB142159524300441C51 /* MoveNoWhere.swift in Sources */,
+				EEBFA16B218C93360047B3A3 /* CountDownTimer.swift in Sources */,
 				EE3B2DB021791344002F0C9B /* MoveRandomlySlowly.swift in Sources */,
 				EE4989FD215BF62D00E72FA7 /* LevelFive.swift in Sources */,
 				EE67C344215BF8AB00048AC4 /* LevelEight.swift in Sources */,
