@@ -122,7 +122,7 @@ class GameScene: SKScene {
     }
     
     func onGameOver() {
-        print("GAME OVER!!")
+        Game.shared.highScores.add(points: Int(points))
     }
     
     private func initTimerFor(level: Level) {

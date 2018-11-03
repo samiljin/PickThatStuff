@@ -25,7 +25,6 @@ class StartUpScene : SKScene {
     
         buttons = [
             startNewGameButton,
-            settingsButton,
             highScoresButton
         ]
         
@@ -43,10 +42,6 @@ class StartUpScene : SKScene {
             [unowned self] in
             self.fadeOutTargets(completion: self.moveToGameScene)
         }
-    }
-    
-    func settingsPressed() {
-        animateButtonsFadeOut(firstButtonToFade: settingsButton, completion: nil)
     }
     
     func highScoresPressed() {
@@ -90,23 +85,16 @@ class StartUpScene : SKScene {
          SKAction.fadeAlpha(to: 0, duration: 0.2)
     ])
     
-    private lazy var settingsButton: Button = {
-        let button = Button(withText: "Settings", size: buttonSize)
-        button.position = CGPoint(x: self.frame.maxX / 2, y: self.frame.maxY / 2)
-        button.onTap = settingsPressed
-        return button
-    }()
-    
     private lazy var startNewGameButton: Button = {
         let button = Button(withText: "Start Game", size: buttonSize)
-        button.position = CGPoint(x: self.frame.maxX / 2, y: self.settingsButton.frame.maxY + buttonSize.height / 2 + 15)
+        button.position = CGPoint(x: self.frame.maxX / 2, y: self.frame.height / 2 + buttonSize.height / 2 + 15)
         button.onTap = startNewGamePressed
         return button
     }()
     
     private lazy var highScoresButton: Button = {
         let button = Button(withText: "Highscores", size: buttonSize)
-        button.position = CGPoint(x: self.frame.maxX / 2, y: self.settingsButton.frame.minY - buttonSize.height / 2 - 15)
+        button.position = CGPoint(x: self.frame.maxX / 2, y: self.startNewGameButton.frame.minY - buttonSize.height / 2 - 15)
         button.onTap = highScoresPressed
         return button
     }()
